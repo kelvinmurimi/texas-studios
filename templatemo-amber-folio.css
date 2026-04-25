@@ -1167,3 +1167,97 @@ footer {
 body.modal-open {
     overflow: hidden;
 }
+
+
+/* Modern Mission Cards Section */
+
+.km-section {
+    padding: 100px 20px;
+    text-align: center;
+    background: var(--primary-dark);
+}
+
+.km-title {
+    font-size: clamp(2.2rem, 5vw, 2.8rem);
+    margin-bottom: 60px;
+    color: var(--text-light);
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.km-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1300px;
+    margin: auto;
+}
+
+.km-card {
+    position: relative;
+    background: var(--secondary-dark);
+    padding: 45px 30px;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.km-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 1px;
+    background: linear-gradient(135deg, var(--accent-color), #f1c40f);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.km-card:hover::before {
+    opacity: 1;
+}
+
+.km-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.km-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 25px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-color), #f1c40f);
+    transition: transform 0.4s ease;
+}
+
+.km-icon svg {
+    width: 28px;
+    height: 28px;
+    fill: var(--primary-dark);
+}
+
+.km-card:hover .km-icon {
+    transform: rotate(8deg) scale(1.1);
+}
+
+.km-card-title {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+.km-card-text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-gray);
+}

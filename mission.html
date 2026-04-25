@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Cards</title>
+
+    <style>
+        /* ===== UNIQUE NAMESPACE ===== */
+        
+        .km-section {
+            padding: 70px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #f5f7fa, #eef2f7);
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        .km-title {
+            font-size: 34px;
+            margin-bottom: 50px;
+            color: #1a1a1a;
+        }
+        /* GRID */
+        
+        .km-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: auto;
+        }
+        /* CARD */
+        
+        .km-card {
+            position: relative;
+            background: #fff;
+            padding: 35px 25px;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        /* Gradient border hover */
+        
+        .km-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            padding: 1px;
+            background: linear-gradient(135deg, #0d6efd, #00c6ff);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .km-card:hover::before {
+            opacity: 1;
+        }
+        /* Lift + glow */
+        
+        .km-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(13, 110, 253, 0.15);
+        }
+        /* ICON */
+        
+        .km-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #0d6efd, #00c6ff);
+            transition: transform 0.4s ease;
+        }
+        
+        .km-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: #fff;
+        }
+        /* Icon animation */
+        
+        .km-card:hover .km-icon {
+            transform: rotate(8deg) scale(1.1);
+        }
+        /* TEXT */
+        
+        .km-card-title {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #0d6efd;
+        }
+        
+        .km-card-text {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="km-section">
+        <h2 class="km-title">Our Core Focus</h2>
+
+        <div class="km-grid">
+
+            <!-- PROCESS -->
+            <div class="km-card">
+                <div class="km-icon">
+                    <!-- Gear SVG -->
+                    <svg viewBox="0 0 24 24">
+                    <path d="M19.4 13a7.8 7.8 0 0 0 .1-2l2-1.5-2-3.5-2.3.7a7.6 7.6 0 0 0-1.7-1l-.3-2.4h-4l-.3 2.4c-.6.2-1.2.6-1.7 1L4.5 6l-2 3.5 2 1.5a7.8 7.8 0 0 0 0 2l-2 1.5 2 3.5 2.3-.7c.5.4 1.1.8 1.7 1l.3 2.4h4l.3-2.4c.6-.2 1.2-.6 1.7-1l2.3.7 2-3.5-2-1.5zM12 15.5A3.5 3.5 0 1 1 12 8a3.5 3.5 0 0 1 0 7.5z"/>
+                </svg>
+                </div>
+                <h3 class="km-card-title">Our Process</h3>
+                <p class="km-card-text">
+                    We empower organizations by crafting compelling narratives and deploying robust digital solutions that drive sustainable growth and lasting social impact.
+                </p>
+            </div>
+
+            <!-- MISSION -->
+            <div class="km-card">
+                <div class="km-icon">
+                    <!-- Target SVG -->
+                    <svg viewBox="0 0 24 24">
+                    <path d="M12 2a10 10 0 1 0 10 10h-2a8 8 0 1 1-8-8V2zm6 0v6h-2V5.4l-5.3 5.3-1.4-1.4L14.6 4H12V2h6z"/>
+                </svg>
+                </div>
+                <h3 class="km-card-title">Our Mission</h3>
+                <p class="km-card-text">
+                    To deliver innovative, reliable, and results-driven consultancy services that help organizations communicate effectively, operate efficiently, and grow sustainably.
+                </p>
+            </div>
+
+            <!-- VISION -->
+            <div class="km-card">
+                <div class="km-icon">
+                    <!-- Globe SVG -->
+                    <svg viewBox="0 0 24 24">
+                    <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm7.9 9h-3.2a15.7 15.7 0 0 0-1.1-5 8 8 0 0 1 4.3 5zM12 4a13.7 13.7 0 0 1 1.7 7H10.3A13.7 13.7 0 0 1 12 4zM4.1 13h3.2a15.7 15.7 0 0 0 1.1 5 8 8 0 0 1-4.3-5zm3.2-2H4.1a8 8 0 0 1 4.3-5 15.7 15.7 0 0 0-1.1 5zM12 20a13.7 13.7 0 0 1-1.7-7h3.4A13.7 13.7 0 0 1 12 20zm3.6-2a15.7 15.7 0 0 0 1.1-5h3.2a8 8 0 0 1-4.3 5z"/>
+                </svg>
+                </div>
+                <h3 class="km-card-title">Our Vision</h3>
+                <p class="km-card-text">
+                    To be a global leader in integrated consultancy—envisioning a world where every organizational story is amplified through innovation, creativity, and excellence.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+
+</html>
