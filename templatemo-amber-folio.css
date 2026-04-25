@@ -1270,3 +1270,24 @@ body.modal-open {
     line-height: 1.7;
     color: var(--text-gray);
 }
+
+.km-value-icon {
+    color: var(--accent-color);
+    margin-right: 5px;
+    font-size: 0.9em;
+    vertical-align: middle;
+}
+
+.km-card-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    text-align: left;
+}
+
+.km-card-list li {
+    font-size: 15px;
+    line-height: 2.2;
+    color: var(--text-gray);
+}
