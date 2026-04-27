@@ -328,17 +328,18 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const card = button.closest('.portfolio-card');
             const title = card.querySelector('.portfolio-card-title').textContent;
-            const summary = card.querySelector('.portfolio-card-text').textContent;
+            const details = card.querySelector('.portfolio-detail-text').innerHTML;
+            const category = card.dataset.category || 'Photography';
+            const year = card.dataset.year || '2024';
 
             modalBody.innerHTML = `
                 <h3>${title}</h3>
                 <div class="modal-desc">
-                    <p>${summary}</p>
-                    <p style="margin-top: 20px;">This project showcases our commitment to visual excellence and storytelling. By utilizing state-of-the-art equipment and a keen artistic eye, we've managed to capture these stunning visuals that speak volumes about the subject matter. Our creative process involves meticulous planning and post-production to ensure the highest quality output for our clients.</p>
+                    ${details}
                 </div>
                 <div class="modal-meta">
-                    <span>Category: Photography</span>
-                    <span>Year: 2024</span>
+                    <span>Category: ${category}</span>
+                    <span>Year: ${year}</span>
                 </div>
             `;
 
